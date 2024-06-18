@@ -20,10 +20,10 @@ app = FastAPI(lifespan=lifespan)
 # CORS middleware setup
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://vlabl.ru", "https://api.vlabl.ru", "http://localhost:8080"],  # Список разрешенных источников
+    allow_origins=["*"],  # Adjust this to only the domains you want to allow
     allow_credentials=True,
-    allow_methods=["*"],  # Разрешение всех методов HTTP
-    allow_headers=["*"],  # Разрешение всех заголовков HTTP
+    allow_methods=["*"],  # Adjust this to only the HTTP methods you want to allow
+    allow_headers=["*"],  # Adjust this to only the HTTP headers you want to allow
 )
 
 # Include routers
